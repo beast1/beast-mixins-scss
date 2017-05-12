@@ -1,0 +1,90 @@
+@mixin wrapper {
+  //add max-width
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@mixin margin-right($margin-right) {
+  &:not(:last-of-type) {
+    margin-right: $margin-right;
+  }
+}
+
+@mixin margin-bottom($margin-bottom) {
+  &:not(:last-of-type) {
+    margin-bottom: $margin-bottom;
+  }
+}
+
+@mixin title-cross($line-margin) {
+  text-align: center;
+  
+  display: flex;
+  align-items: center;
+  
+  &::before,
+  &::after {
+    content: "";
+   
+    position: relative;
+    top: -5px;
+
+    flex-grow: 1;
+    
+    //add backgroud
+  }
+  
+  
+  &::before {
+    margin-right: $line-margin;
+  }
+
+  &::after {
+    margin-left: $line-margin;
+  }
+}
+
+@mixin radial($size) {
+  width: $size;
+  height: $size;
+  //add border
+  
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  //add background
+}
+
+@mixin label($background) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //add width
+  //add height
+  border: none;
+  
+  color: inherit;
+  text-decoration: none;
+  
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background: $background;
+}
+
+@mixin btn($background, $border-radius) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  
+  color: inherit;
+  text-decoration: none;
+  
+  border-radius: $border-radius;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  background: $background;
+}
