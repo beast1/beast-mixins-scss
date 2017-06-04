@@ -1,0 +1,54 @@
+@mixin margin-right($margin-right) {
+  &:not(:last-of-type) {
+    margin-right: $margin-right;
+  }
+}
+
+@mixin margin-bottom($margin-bottom) {
+  &:not(:last-of-type) {
+    margin-bottom: $margin-bottom;
+  }
+}
+
+@mixin title-cross($line-margin, $background) {
+  text-align: center;
+  
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  
+  &::before,
+  &::after {
+    content: "";
+   
+    position: relative;
+    top: 50%;
+
+    flex-grow: 1;
+    
+    background: $background;
+
+    transform: translateY(-50%);
+  }
+  
+  
+  &::before {
+    margin-right: $line-margin;
+  }
+
+  &::after {
+    margin-left: $line-margin;
+  }
+}
+
+@mixin radial($size, $background, $box-shadow) {
+  box-sizing: border-box;
+  width: $size;
+  height: $size;
+  
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  background: $background;
+  box-shadow: $box-shadow;
+}
